@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les plus empruntés — BiblioTech{% endblock %}
+
+{% block body %}
+    <section class="catalogue-entete">
+        <div>
+            <h1 class="page-titre">Les plus empruntés</h1>
+            <p class="page-sous-titre">Les {{ livres|length }} livres préférés de nos adhérents</p>
+        </div>
+    </section>
+
+    <section class="grille">
+        {% for livre in livres %}
+            {% include '_carte.html.twig' %}
+        {% endfor %}
+    </section>
+{% endblock %}
